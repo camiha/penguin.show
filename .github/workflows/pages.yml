@@ -22,8 +22,14 @@ jobs:
         with:
           version: 9
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: "pnpm"
+
       - name: Build site
-        run: pnpm run build
+        run: pnpm build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
