@@ -3,10 +3,26 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "3.0.0-alpha.17",
+    "@biomejs/biome": "^1.8.3",
+    "@types/html-minifier-terser": "^7.0.2",
+    "browserslist": "^4.23.2",
+    "budoux": "^0.6.2",
+    "flat-cache": "^5.0.0",
+    "html-minifier-terser": "^7.2.0",
+    "lightningcss": "^1.25.1",
+    "shiki": "^1.11.1",
+    "stylelint": "^16.7.0",
+    "stylelint-config-recess-order": "^5.0.1",
+    "stylelint-config-standard": "^36.0.1"
+  }
 }

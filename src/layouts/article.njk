@@ -1,0 +1,20 @@
+{% extends 'src/layouts/base.njk' %}
+
+{% block main %}
+    <article>
+        <header>
+            <time>{{ date | dateFilter }}</time>
+            <div>
+                <h2>{{ title }}</h2>
+                <ul>
+                    {%- for tag in tags -%}
+                        <li>
+                            <a href="/tags/{{ tag }}/">{{ tag }}</a>
+                        </li>
+                    {%- endfor -%}
+                </ul>
+            </div>
+        </header>
+        {{ content | safe }}
+    </article>
+{% endblock %}

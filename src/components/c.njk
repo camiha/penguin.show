@@ -1,0 +1,6 @@
+{# DOCS: https://www.trysmudford.com/blog/encapsulated-11ty-components/ #}
+{%- macro c(name, props) -%}
+    {% set path = props.path if props.path else 
+        "components/" %}
+    {% include "src/" + path + name + ".njk" ignore missing %}
+{%- endmacro -%}

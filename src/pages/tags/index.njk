@@ -1,0 +1,19 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+   - article
+   - all
+  addAllPagesToCollections: true
+permalink: /tags/{{ tag }}/
+---
+{% extends 'src/layouts/base.njk' %}
+
+{% block main %}
+    <h2>tag: {{ tag }}</h2>
+    {% for article in collections[tag] | reverse %}
+        {{ c('headline', { article: article }) }}
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,20 @@
+<dl>
+    <div>
+        <dt>
+            <a href="{{ props.article.url }}">{{ props.article.data.title }}</a>
+        </dt>
+        <dd>
+            <time>{{ props.article.data.date | dateFilter }}</time>
+        </dd>
+        <dd>
+            <ul>
+                {%- for tag in props.article.data.tags -%}
+                    <li>
+                        <a href="/tags/{{ tag }}/">{{ tag }}</a>
+                    </li>
+                {%- endfor -%}
+            </ul>
+        </dd>
+        <dd>{{ props.article.data.description }}</dd>
+    </div>
+</dl>
