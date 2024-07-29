@@ -44,6 +44,7 @@ export default async function (eleventyConfig) {
 			minify: true,
 			sourceMap: true,
 		});
+		fs.mkdirSync("out/css", { recursive: true });
 		fs.writeFileSync("out/css/index.css", code);
 	});
 
