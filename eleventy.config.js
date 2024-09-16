@@ -1,6 +1,7 @@
 import fs from "node:fs";
 
 import htmlMinifierTerser from "html-minifier-terser";
+import implicitFigures from "markdown-it-image-figures";
 import { transform } from "lightningcss";
 import { loadDefaultJapaneseParser } from "budoux";
 import { createHighlighter } from "shiki";
@@ -36,6 +37,8 @@ const markdownItBudouxParagraphPlugin = (md) => {
 };
 
 export default async function (eleventyConfig) {
+	eleventyConfig.ignores.add("**/_**/*");
+
 	// TODO: refactor
 	eleventyConfig.addWatchTarget("src/styles/");
 	eleventyConfig.on("eleventy.before", () => {
@@ -53,7 +56,7 @@ export default async function (eleventyConfig) {
 		const year = dateObj.getFullYear();
 		const month = String(dateObj.getMonth() + 1).padStart(2, "0");
 		const day = String(dateObj.getDate()).padStart(2, "0");
-		return `${year}-${month}-${day}`;
+		return `${year}/${month}/${day}`;
 	});
 
 	eleventyConfig.addCollection("article", (collectionApi) => {
@@ -63,16 +66,16 @@ export default async function (eleventyConfig) {
 			.sort((a, b) => b.data.date - a.data.date);
 	});
 
-	eleventyConfig.addTransform("htmlPostProcess", function (content) {
-		if ((this.page.outputPath || "").endsWith(".html")) {
-			return htmlMinifierTerser.minify(content, {
-				useShortDoctype: true,
-				removeComments: true,
-				collapseWhitespace: true,
-			});
-		}
-		return content;
-	});
+	// eleventyConfig.addTransform("htmlPostProcess", function (content) {
+	// 	if ((this.page.outputPath || "").endsWith(".html")) {
+	// 		return htmlMinifierTerser.minify(content, {
+	// 			useShortDoctype: true,
+	// 			removeComments: true,
+	// 			collapseWhitespace: true,
+	// 		});
+	// 	}
+	// 	return content;
+	// });
 
 	// ref: https://www.hoeser.dev/blog/2023-02-07-eleventy-shiki-simple/
 	eleventyConfig.amendLibrary("md", () => {});
@@ -80,7 +83,7 @@ export default async function (eleventyConfig) {
 		// TODO: cache
 		const highlighter = await createHighlighter({
 			themes: ["one-dark-pro"],
-			langs: ["js", "ts"],
+			langs: ["js", "ts", "css"],
 		});
 		eleventyConfig.amendLibrary("md", (mdLib) => {
 			mdLib.set({
@@ -93,6 +96,7 @@ export default async function (eleventyConfig) {
 						lang,
 					}),
 			});
+			mdLib.use(implicitFigures);
 			mdLib.use(markdownItBudouxParagraphPlugin);
 		});
 	});

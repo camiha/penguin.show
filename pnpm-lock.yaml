@@ -23,15 +23,15 @@ importers:
       budoux:
         specifier: ^0.6.2
         version: 0.6.2
-      flat-cache:
-        specifier: ^5.0.0
-        version: 5.0.0
       html-minifier-terser:
         specifier: ^7.2.0
         version: 7.2.0
       lightningcss:
         specifier: ^1.25.1
         version: 1.25.1
+      markdown-it-image-figures:
+        specifier: ^2.1.1
+        version: 2.1.1(markdown-it@14.1.0)
       shiki:
         specifier: ^1.11.1
         version: 1.12.0
@@ -988,6 +988,12 @@ packages:
   luxon@3.4.4:
     resolution: {integrity: sha512-zobTr7akeGHnv7eBOXcRgMeCP6+uyYsczwmeRCauvpvaAltgNyTbLH/+VaEAPUeWBT+1GuNmz4wC/6jtQzbbVA==}
     engines: {node: '>=12'}
+
+  markdown-it-image-figures@2.1.1:
+    resolution: {integrity: sha512-mwXSQ2nPeVUzCMIE3HlLvjRioopiqyJLNph0pyx38yf9mpqFDhNGnMpAXF9/A2Xv0oiF2cVyg9xwfF0HNAz05g==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      markdown-it: '*'
 
   markdown-it@14.1.0:
     resolution: {integrity: sha512-a54IwgWPaeBCAAsv13YgmALOF1elABB08FxO9i+r4VFk5Vl4pKokRPeX8u5TCgSsPi6ec1otfLjdOpVcgbpshg==}
@@ -2485,6 +2491,10 @@ snapshots:
   lru-cache@10.4.3: {}
 
   luxon@3.4.4: {}
+
+  markdown-it-image-figures@2.1.1(markdown-it@14.1.0):
+    dependencies:
+      markdown-it: 14.1.0
 
   markdown-it@14.1.0:
     dependencies:
