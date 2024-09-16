@@ -3,7 +3,11 @@
     <head>
         <meta charSet="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>penguin.show</title>
+        {% if title %}
+            <title>{{ title }}</title>
+        {% else %}
+            <title>penguin.show</title>
+        {% endif %}
         <meta name="description" content="penguin.show"/>
         <meta name="author" content="camiha"/>
         <meta keywords="penguin, show, blog, camiha"/>
@@ -14,13 +18,11 @@
         <link rel="preconnect" href="https://pvinis.github.io"/>
     </head>
     <body>
-        <div>
-            {% include "src/components/header.njk" %}
-            <main>
-                {%- block main -%}{%- endblock -%}
-            </main>
-            {% include "src/components/footer.njk" %}
-        </div>
+        {% include "src/components/header.njk" %}
+        <main>
+            {%- block main -%}{%- endblock -%}
+        </main>
+        {% include "src/components/footer.njk" %}
         <link href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css" rel="stylesheet"/>
     </body>
 </html>

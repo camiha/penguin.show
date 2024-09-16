@@ -1,6 +1,13 @@
 <header>
-    <a href="/">
-        <h1>penguin<wbr/>.show</h1>
-    </a>
-    {% include "src/components/navigation.njk" %}
+    {% if pageId == "root" %}
+        <h1 class="header-logo">penguin<wbr/>.show</h1>
+    {% else %}
+        <p class="header-logo">
+            <a href="/">penguin<wbr/>.show</a>
+        </p>
+        {% if title %}
+            <time class="header-time" datetime="{{ date | dateFilter}}">publish: {{ date | dateFilter }}</time>
+            <h1 class="header-title">{{ title }}</h1>
+        {% endif %}
+    {% endif %}
 </header>

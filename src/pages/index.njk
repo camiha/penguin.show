@@ -1,7 +1,11 @@
+{% set pageId = "root" %}
 {% extends 'src/layouts/base.njk' %}
 
 {% block main %}
-    {%- for article in collections.article -%}
-        {{ c('headline', { article: article }) }}
-    {%- endfor -%}
+    <h2>投稿</h2>
+    <ul class="headline-list">
+        {%- for article in collections.article -%}
+            {{ c('headline', { article: article }) }}
+        {%- endfor -%}
+    </ul>
 {% endblock %}
