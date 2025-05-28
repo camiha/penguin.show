@@ -23,6 +23,7 @@
     "shiki": "^3.4.2",
     "stylelint": "^16.18.0",
     "stylelint-config-recess-order": "^6.0.0",
-    "stylelint-config-standard": "^38.0.0"
+    "stylelint-config-standard": "^38.0.0",
+    "stylelint-use-logical": "^2.1.2"
   }
 }
