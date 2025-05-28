@@ -69,7 +69,6 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addTransform("htmlPostProcess", function (content) {
 		if ((this.page.outputPath || "").endsWith(".html")) {
 			return htmlMinifierTerser.minify(content, {
-				useShortDoctype: true,
 				removeComments: true,
 				collapseWhitespace: true,
 			});
