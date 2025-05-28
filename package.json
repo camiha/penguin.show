@@ -12,17 +12,17 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "3.0.0-alpha.17",
+    "@11ty/eleventy": "^3.1.0",
     "@biomejs/biome": "^1.8.3",
     "@types/html-minifier-terser": "^7.0.2",
     "browserslist": "^4.23.2",
-    "budoux": "^0.6.2",
+    "budoux": "^0.6.4",
     "html-minifier-terser": "^7.2.0",
     "lightningcss": "^1.25.1",
     "markdown-it-image-figures": "^2.1.1",
-    "shiki": "^1.11.1",
-    "stylelint": "^16.7.0",
-    "stylelint-config-recess-order": "^5.0.1",
-    "stylelint-config-standard": "^36.0.1"
+    "shiki": "^3.4.2",
+    "stylelint": "^16.18.0",
+    "stylelint-config-recess-order": "^6.0.0",
+    "stylelint-config-standard": "^38.0.0"
   }
 }
