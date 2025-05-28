@@ -66,16 +66,16 @@ export default async function (eleventyConfig) {
 			.sort((a, b) => b.data.date - a.data.date);
 	});
 
-	// eleventyConfig.addTransform("htmlPostProcess", function (content) {
-	// 	if ((this.page.outputPath || "").endsWith(".html")) {
-	// 		return htmlMinifierTerser.minify(content, {
-	// 			useShortDoctype: true,
-	// 			removeComments: true,
-	// 			collapseWhitespace: true,
-	// 		});
-	// 	}
-	// 	return content;
-	// });
+	eleventyConfig.addTransform("htmlPostProcess", function (content) {
+		if ((this.page.outputPath || "").endsWith(".html")) {
+			return htmlMinifierTerser.minify(content, {
+				useShortDoctype: true,
+				removeComments: true,
+				collapseWhitespace: true,
+			});
+		}
+		return content;
+	});
 
 	// ref: https://www.hoeser.dev/blog/2023-02-07-eleventy-shiki-simple/
 	eleventyConfig.amendLibrary("md", () => {});
