@@ -136,7 +136,14 @@
 	}
 
 	a {
-		text-decoration: underline;
+		text-decoration-line: underline;
+		text-decoration-thickness: 0.125em;
+		text-underline-offset: 0.125em;
+		cursor: pointer;
+	}
+
+	a:hover {
+		text-decoration-thickness: 0.25em;
 	}
 
 	ul,
@@ -232,7 +239,6 @@
 
 		a {
 			grid-area: a;
-			text-decoration: underline;
 		}
 
 		time {
