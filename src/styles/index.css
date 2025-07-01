@@ -76,6 +76,11 @@
 		display: revert;
 	}
 
+	:focus-visible {
+		outline: var(--line-lg) solid var(--color-accent);
+		outline-offset: var(--line-lg);
+	}
+
 	body {
 		display: grid;
 		grid-template-rows:
