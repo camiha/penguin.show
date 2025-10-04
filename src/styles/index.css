@@ -36,9 +36,9 @@
 	--max-contents-width: 40em;
 
 	/* color */
-	--color-bg: #313131;
-	--color-text: #f1f1f1;
-	--color-accent: #ffbe67;
+	--color-bg: #1d1f21;
+	--color-text: #c5c8c6;
+	--color-accent: #b5bd68;
 }
 
 @view-transition {
