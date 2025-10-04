@@ -12,8 +12,10 @@ permalink: /tags/{{ tag }}/
 {% extends 'src/layouts/base.njk' %}
 
 {% block main %}
-    <h2>tag: {{ tag }}</h2>
+  <h2>tag: {{ tag }}</h2>
+  <ul class="headline-list">
     {% for article in collections[tag] | reverse %}
-        {{ c('headline', { article: article }) }}
+      {{ c('headline', { article: article }) }}
     {% endfor %}
+  </ul>
 {% endblock %}

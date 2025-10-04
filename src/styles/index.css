@@ -36,13 +36,9 @@
 	--max-contents-width: 40em;
 
 	/* color */
-	--color-bg: #1d1f21;
-	--color-bg-2: #282a2e;
-	--color-bg-3: #373b41;
-	--color-text: #c5c8c6;
-	--color-link: #81a2be;
-	--color-accent: #b5bd68;
-	--color-accent-2: #8abeb7;
+	--color-bg: #313131;
+	--color-text: #f1f1f1;
+	--color-accent: #ffbe67;
 }
 
 @view-transition {
@@ -159,7 +155,6 @@
 	}
 
 	li {
-		/* margin-left: 1rem; */
 		list-style: none;
 	}
 
@@ -192,12 +187,6 @@
 		}
 	}
 
-	/* .post-list { */
-
-	/* list-style: none; */
-
-	/* } */
-
 	header {
 		display: grid;
 		grid-template:
@@ -221,6 +210,7 @@
 	.header-time {
 		grid-area: time;
 		align-self: center;
+		margin-inline-start: var(--size-md);
 	}
 
 	.header-title {
@@ -228,42 +218,35 @@
 	}
 
 	.headline-list {
-		display: grid;
+		display: flex;
+		flex-direction: column;
+		gap: var(--size-md);
 	}
 
 	.headline {
-		display: grid;
-		grid-template: "time a" auto / auto auto 1fr;
-		column-gap: 0.5rem;
+		display: flex;
+		flex-direction: column;
 		margin-inline-end: auto;
 
-		a {
-			grid-area: a;
-		}
-
 		time {
-			grid-area: time;
-			align-self: self-end;
 			font-size: var(--size-sm);
 		}
 	}
 
 	footer {
 		display: grid;
-		grid-template-columns: 1fr auto;
 		grid-row: footer;
 		grid-column: 1 / -1;
 
 		small {
-			align-self: end;
+			margin-block-start: var(--size-md);
 			font-family: var(--font-monospace);
 			font-size: var(--size-sm);
 		}
 	}
 
 	.footer-link {
-		display: grid;
-		grid-template-columns: auto auto auto;
+		display: flex;
 		column-gap: var(--size-md);
 		font-size: var(--size-sm);
 	}
